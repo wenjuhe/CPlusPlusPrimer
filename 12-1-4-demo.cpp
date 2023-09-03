@@ -31,11 +31,25 @@ void func(){
         //引用 不会去拷贝
     } catch (const std::exception& exception) {
         cout << exception.what() << endl;
+        return;
     }
 }
 
+void DestructAClass(A* a) {
+    delete a->a_;
+    cout << "in self-made destrution" << endl;
+}
+
+void func_2() {
+    std::shared_ptr<A>(new A(42),DestructAClass);
+    cout << "hello world" << endl;
+}
+
+
+
 int main() {
-    func();
+    //func();
+    func_2();
     cout << "hello world" << endl;
     return 0;
 }
