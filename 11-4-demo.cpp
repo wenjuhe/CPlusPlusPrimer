@@ -24,7 +24,6 @@ void func_2() {
 }
 
 void func_3() {
-    //hashing function for pointer
     unordered_map<A*,int> my_unordered_map;
 }
 
